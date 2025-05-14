@@ -16,7 +16,7 @@
 <body>
   <div class="wrapper">
     <div class="form-container sign-in-container">
-      <form method="POST" action="#">
+      <form method="POST" action="{{ route('login') }}">
         @csrf
         <img src="{{ asset('img/Logo.png') }}" alt="" class="logo" />
         <h1>Sign in</h1><p></p>
@@ -29,6 +29,15 @@
             <i id="toggle-eye" class="fas fa-eye"></i>
           </span>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <a href="#">Forgot your password?</a>
         <a href="#">Belum punya akun</a>
 
