@@ -39,7 +39,7 @@
             </div>
         @endif
         <a href="#">Forgot your password?</a>
-        <a href="#">Belum punya akun</a>
+        <a href="/register">Belum punya akun</a>
 
         <button class="btnLogin" type="submit">Masuk</button>
       </form>

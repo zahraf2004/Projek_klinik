@@ -10,6 +10,12 @@ Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 // Route untuk login
 Route::post('/', [AuthController::class, 'login']);
 
+//route register
+Route::get('/register', function (){
+    return view('register');
+});
+
+//route chatify
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/chatify', [\Chatify\Http\Controllers\MessagesController::class, 'index'])->name('chatify');
 });
