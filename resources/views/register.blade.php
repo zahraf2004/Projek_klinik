@@ -21,27 +21,36 @@
                         <img src="{{ asset('img/foto_klinik.jpg') }}" class="card-img-top" alt="Klinik Photo">
                         <div class="card-body p-4 p-md-5">
                             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Registrasi</h3>
-
-                            <form>
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul class="mb-0">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form method="POST" action="{{ route('register.pasien') }}">
+                                @csrf
                                 <div class="form-group mb-4">
                                     <label for="nameInput" class="form-label">Nama</label>
-                                    <input type="text" id="nameInput" class="form-control" placeholder="Nama" required>
+                                    <input type="text" id="nameInput" name="nama" class="form-control" placeholder="Nama" required>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-group">
-                                            <label for="dateInput" class="form-label">Tanggal Lahir</label>
-                                            <input type="date" class="form-control" id="dateInput" required>
+                                            <label for="dateBirth" class="form-label">Tanggal Lahir</label>
+                                            <input type="date" class="form-control" name="tgl_lahir" id="dateBirth" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-group">
                                             <label for="genderSelect" class="form-label">Jenis Kelamin</label>
-                                            <select class="form-select" id="genderSelect" required>
+                                            <select class="form-select" id="genderSelect" name="jk" required>
                                                 <option value="">-- Pilih Jenis Kelamin --</option>
-                                                <option value="female">Perempuan</option>
-                                                <option value="male">Laki Laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                                <option value="Laki-Laki">Laki Laki</option>
                                             </select>
                                         </div>
                                     </div>
@@ -49,17 +58,17 @@
 
                                 <div class="form-group mb-4">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" id="email" class="form-control" placeholder="Masukkan email" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Masukkan email" required>
                                 </div>
 
                                 <div class="form-group mb-4">
                                     <label for="noHp" class="form-label">No Handphone</label>
-                                    <input type="text" id="noHP" class="form-control" placeholder="Masukkan Nomor Handphone" required>
+                                    <input type="text" id="noHP" name="no_hp" class="form-control" placeholder="Masukkan Nomor Handphone" required>
                                 </div>
 
                                 <div class="form-group mb-4">
                                     <label for="alamatInput" class="form-label">Alamat</label>
-                                    <input type="text" id="alamatInput" class="form-control" placeholder="Masukkan alamat" required>
+                                    <input type="text" id="alamatInput" name="alamat" class="form-control" placeholder="Masukkan alamat" required>
                                 </div>
 
                                 <div class="row mb-5">

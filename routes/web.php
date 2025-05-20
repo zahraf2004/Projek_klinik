@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Chatify\Chatify;
+use App\Http\Controllers\RegisterPasienController;
 
 // Route tampil login
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
@@ -14,6 +15,7 @@ Route::post('/', [AuthController::class, 'login']);
 Route::get('/register', function (){
     return view('register');
 });
+Route::post('/register', [RegisterPasienController::class, 'register'])->name('register.pasien');
 
 //route chatify
 Route::group(['middleware' => ['auth']], function () {
