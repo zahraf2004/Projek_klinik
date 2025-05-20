@@ -19,7 +19,7 @@
       <form method="POST" action="{{ route('login') }}">
         @csrf
         <img src="{{ asset('img/Logo.png') }}" alt="" class="logo" />
-        <h1>Sign in</h1><p></p>
+        <h1>Masuk</h1><p></p>
 
         <input type="email" placeholder="Email" name="email" required><br>
         <br>
@@ -38,10 +38,10 @@
                 </ul>
             </div>
         @endif
-        <a href="#">Forgot your password?</a>
-        <a href="/register">Belum punya akun</a>
-
+        <a href="#">Lupa password?</a>
+        <br><br>
         <button class="btnLogin" type="submit">Masuk</button>
+        <a href="/register">Belum punya akun?</a>
       </form>
     </div>
   </div>

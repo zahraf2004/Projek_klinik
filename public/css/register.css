@@ -1,5 +1,5 @@
 body {
-    background-color: #f6f5f7 !important; 
+    background-color: #f6f5f7 !important;
     margin: 0;
     padding: 0;
     color: #333;
@@ -7,9 +7,7 @@ body {
 
 .registration-section {
     min-height: 100vh;
-    
 }
-
 
 .card {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -47,12 +45,35 @@ body {
     transform: scale(0.95);
 }
 
+.input-group-text {
+    cursor: pointer;
+    background-color: transparent;
+    border-left: none;
+  }
+  
+  .input-group .form-control {
+    border-right: none;
+  }
+  
+  .input-group .form-control:focus {
+    box-shadow: none;
+  }
+  
+  .input-group .input-group-text i {
+    color: #666;
+  }
+  
+  .input-group .input-group-text:hover i {
+    color: #000;
+  }
+  
+
 /* Media Query untuk Mobile */
 @media (max-width: 768px) {
     .card {
         margin: 1rem;
     }
-    
+
     .card-body {
         padding: 1.5rem;
     }
