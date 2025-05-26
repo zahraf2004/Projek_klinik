@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function canAccessFilament(): bool
+    {
+        return in_array($this->role, ['admin', 'superadmin']);
+    }
 }

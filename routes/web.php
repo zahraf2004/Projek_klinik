@@ -22,6 +22,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/chatify', [\Chatify\Http\Controllers\MessagesController::class, 'index'])->name('chatify');
 });
 
-Route::get('/dashboardAdmin', function (){
+Route::get('/dashboard', function (){
     return view('dashboard_ADM');
 });
