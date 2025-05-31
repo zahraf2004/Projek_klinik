@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('dokter', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nama_dokter');
             $table->string('email')->unique();
-            $table->date('tgl_lahir');
+            $table->date('tanggal_lahir');
             $table->string('alumnus');
-            $table->string('no_hp');
+            $table->string('nomor_hp');
             $table->string('spesialis');
             $table->string('praktik');
             $table->timestamps();
