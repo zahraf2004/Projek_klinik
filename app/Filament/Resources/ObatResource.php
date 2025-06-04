@@ -55,6 +55,7 @@ class ObatResource extends Resource
                         'salep' => 'Salep',
                         'inhaler' => 'Inhaler',
                         'suntik' => 'Suntik',
+                        'oles' => 'Oles',
                         'lainnya' => 'Lainnya',
                  ]),
                 Textarea::make('deskripsi_obat')
@@ -80,19 +81,19 @@ class ObatResource extends Resource
                     ->searchable(),
                 TextColumn::make('jenis_obat')
                     ->searchable()
-                    ->color('primary'),
+                    ->color('info'),
                 TextColumn::make('deskripsi_obat')
-                    ->label('Deskripsi Obat')
+                    ->label('Deskripsi')
+                    ->html()
                     ->limit(50)
                     ->tooltip(function (TextColumn $column): ?string {
                         $state = $column->getState();
-                        return (strlen($state) > 50) ? $state : null;
+                        return strip_tags($state); // Hapus tag HTML untuk tooltip
                     })
-                    ->extraAttributes([
-                        'class' => 'max-w-[300px] truncate', // ✅ Pakai 'class' di dalam array
-                    ])
-                    ->toggleable()
-                    ->hiddenFrom('md') // Sembunyikan di layar kecil
+                    ->extraAttributes(['class' => 'max-w-[300px] line-clamp-2'])
+                    ->wrap()
+                    ->toggleable(isToggledHiddenByDefault: false) // Default muncul
+                    ->hiddenOn('sm'), // Sembunyikan hanya di mobile
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('jenis_obat')
@@ -103,6 +104,7 @@ class ObatResource extends Resource
                         'salep' => 'Salep',
                         'inhaler' => 'Inhaler',
                         'suntik' => 'Suntik',
+                        'oles' => 'Oles',
                         'lainnya' => 'Lainnya',
                     ]),
             ])
