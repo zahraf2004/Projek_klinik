@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa !important;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    background-color: #2d7bf4;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d7bf4;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #2d7bf4;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2d7bf4;
+    border-radius: 2px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.profile-name {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+    top: 35px;
+    left: 0;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f5ff;
+    color: #2d7bf4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Search & filter Styles */
+.search {
+    margin: 50px 65px 30px 65px;
+    display: flex;
+}
+
+.Judul h1 {
+    margin-left: 65px;
+    font-size: 30px;
+    max-width: 400px;
+    font-weight: bold;
+    color: #2d7bf4;
+}
+.filter {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 65px 30px 65px;
+}
+
+.filter2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+}
+
+.Check {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    transition: all 0.2s;
+    height: 30px;
+    font-weight: normal;
+}
+
+.Check:hover {
+    color: #2d7bf4;
+}
+
+/* Hide the browser's default checkbox */
+.Check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #f0f4ff;
+    border: 1px solid #d0d9e7;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+/* On mouse-over, add a grey background color */
+.Check:hover input ~ .checkmark {
+    background-color: #e1e9ff;
+    border-color: #a9c0f5;
+}
+
+/* When the checkbox is checked, add a blue background */
+.Check input:checked ~ .checkmark {
+    background-color: #2d7bf4;
+    border-color: #2d7bf4;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.Check input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.Check .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Product Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 65px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+    height: 180px;
+    background: #f0f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-img img {
+    max-width: 100%;
+    max-height: 140px;
+    object-fit: contain;
+}
+
+.product-content {
+    padding: 20px;
+}
+
+.product-category {
+    color: #2d7bf4;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d7bf4;
+    margin-bottom: 15px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+    color: #ffb300;
+}
+
+.add-to-cart {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: #2d7bf4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.add-to-cart:hover {
+    background: #1a66e0;
+}
+
+.add-to-cart i {
+    margin-right: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .filter2 {
+        gap: 15px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        justify-content: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .search-section,
+    .products-grid {
+        padding: 0 20px;
+    }
+
+    .filter {
+        padding: 15px;
+    }
+
+    .Judul h1 {
+        font-size: 24px;
+    }
+
+    .filter2 {
+        gap: 10px;
+    }
+
+    .Check {
+        font-size: 14px;
+        padding-left: 30px;
+    }
+
+    .checkmark {
+        height: 20px;
+        width: 20px;
+    }
+
+    .Check .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter2 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

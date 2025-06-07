@@ -25,3 +25,13 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/dashboard', function (){
     return view('dashboard_ADM');
 });
+
+Route::get('/obat', function (){
+    return view('obat');
+});
+Route::get('/homepage', function (){
+    return view('homepage');
+});
+Route::get('/obat2', function (){
+    return view('obat2');
+});

@@ -30,7 +30,7 @@ class DokterResource extends Resource
 
     protected static ?string $slug = 'data-dokter';
 
-    protected static ?string $label = 'Data Dokter';
+    protected static ?string $label = 'Kelola Dokter';
 
     public static function form(Form $form): Form
     {
