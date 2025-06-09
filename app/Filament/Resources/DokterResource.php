@@ -74,7 +74,7 @@ class DokterResource extends Resource
                 TextColumn::make('tanggal_lahir')
                     ->sortable(),
                 TextColumn::make('alumnus')
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->searchable(),
                 TextColumn::make('nomor_hp'),
                 TextColumn::make('spesialis')
                     ->searchable()

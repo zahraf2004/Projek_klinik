@@ -35,3 +35,7 @@ Route::get('/homepage', function (){
 Route::get('/obat2', function (){
     return view('obat2');
 });
+
+Route::get('/dashboard', function (){
+    return view('dashboardUser');
+});
