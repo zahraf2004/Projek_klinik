@@ -39,3 +39,7 @@ Route::get('/obat2', function (){
 Route::get('/dashboard', function (){
     return view('dashboardUser');
 });
+
+Route::get('/pilih-Dokter', function (){
+    return view('pilDokter');
+});

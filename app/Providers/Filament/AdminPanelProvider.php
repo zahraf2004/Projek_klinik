@@ -28,6 +28,8 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->topNavigation()
+            ->brandLogo(asset('img/logo2.png')) // ✅ ini ganti logo
+            ->brandName('Klinik Pratama') // ✅ ini ganti tulisan brand
             ->colors([
                 'primary' => Color::Blue,
             ])
@@ -38,7 +40,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                
+                // ...
             ])
             ->spa()
             ->middleware([
@@ -56,4 +58,5 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
+
 }

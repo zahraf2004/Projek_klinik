@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\TextColumn;
 
 class AppointmentResource extends Resource
 {
@@ -31,7 +32,34 @@ class AppointmentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('nama')
+                    ->searchable()
+                    ->label('Nama')
+                    ->sortable(),
+                TextColumn::make('no_hp')
+                    ->label('Handphone'),
+                TextColumn::make('tanggal_lahir')
+                    ->searchable()
+                    ->label('Tanggal Lahir')
+                    ->sortable(),
+                TextColumn::make('alamat')
+                    ->searchable()
+                    ->label('Alamat'),
+                TextColumn::make('keluhan')
+                    ->label('Keluhan Pasien'),
+                TextColumn::make('tanggal')
+                    ->label('Tanggal Janji Temu')
+                    ->sortable(),
+                TextColumn::make('jam')
+                    ->label('Jam')
+                    ->sortable(),
+                TextColumn::make('admin_notes')
+                    ->searchable()
+                    ->label('Catatan')
+                    ->sortable(),
+                TextColumn::make('status')
+                    ->searchable()
+                    ->label('Status')
             ])
             ->filters([
                 //

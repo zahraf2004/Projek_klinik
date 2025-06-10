@@ -92,8 +92,7 @@ class ObatResource extends Resource
                     })
                     ->extraAttributes(['class' => 'max-w-[300px] line-clamp-2'])
                     ->wrap()
-                    ->toggleable(isToggledHiddenByDefault: false) // Default muncul
-                    ->hiddenOn('sm'), // Sembunyikan hanya di mobile
+                    
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('jenis_obat')
