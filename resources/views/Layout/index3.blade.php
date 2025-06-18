@@ -17,8 +17,7 @@
 
     <div id="wrapper">
         
-        @yield('content2')
-        @include('layout/footer')
+        @yield('content3')
 
 
     </div>
@@ -70,7 +69,7 @@
                         // Implement your search logic here
                     }
                 }
-
+            
             document.querySelector('.btn-cancel').addEventListener('click', function() {
                 const confirmation = confirm('Apakah Anda yakin ingin membatalkan? Semua data yang telah diisi akan hilang.');
                 if (confirmation) {
@@ -78,7 +77,6 @@
                     document.querySelector('form').reset();
                 }
             });
-
             const doctorCards = document.querySelectorAll('.doctor-card');
         doctorCards.forEach(card => {
             card.addEventListener('mouseenter', () => {

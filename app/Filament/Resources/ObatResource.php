@@ -73,7 +73,7 @@ class ObatResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('gambar_obat')
-                    ->height(50),
+                    ->size(100),
                 TextColumn::make('nama_obat')
                     ->searchable()
                     ->sortable(),

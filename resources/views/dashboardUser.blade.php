@@ -16,7 +16,7 @@
                 <div class="card-content">
                     <h3>Chat dengan Dokter</h3>
                     <p>Layanan konsultasi online dan perawatan dengan privasi terjamin. Dapatkan saran medis dari dokter berpengalaman kapan saja.</p>
-                    <a href="#" class="btn">Lihat Layanan</a>
+                    <a href="/chatify" class="btn">Lihat Layanan</a>
                 </div>
             </div>
             
@@ -27,7 +27,7 @@
                 <div class="card-content">
                     <h3>Janji Temu</h3>
                     <p>Atur janji temu untuk melakukan pemeriksaan dengan dokter secara langsung. Pilih dokter, tanggal, dan jam yang sesuai dengan kebutuhan Anda.</p>
-                    <a href="#" class="btn">Lihat Layanan</a>
+                    <a href="/isi-janji-temu" class="btn">Lihat Layanan</a>
                 </div>
             </div>
             
@@ -38,7 +38,7 @@
                 <div class="card-content">
                     <h3>Obat & Vitamin</h3>
                     <p>Suplemen nutrisi untuk mendukung kesehatan dan kebugaran sehari-hari. Berbagai informasi obat resep dan non-resep dengan kualitas terjamin.</p>
-                    <a href="#" class="btn">Lihat Informasi Produk</a>
+                    <a href="/obat" class="btn">Lihat Informasi Produk</a>
                 </div>
             </div>
         </div>
@@ -101,7 +101,7 @@
                 
             </div>
             <div class="view-all">
-                        <a href="#" class="view-all-btn">Lihat Semua Obat Vitamin & Suplemen</a>
+                        <a href="/obat" class="view-all-btn">Lihat Semua Obat Vitamin & Suplemen</a>
             </div>
         </div>
     </div>

@@ -23,6 +23,10 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::get('/dashboard', function (){
+    return view('dashboardUser');
+})->name('dashboard');
+
+Route::get('/dashboard3', function (){
     return view('dashboard_ADM');
 });
 
@@ -36,10 +40,18 @@ Route::get('/obat2', function (){
     return view('obat2');
 });
 
-Route::get('/dashboard', function (){
-    return view('dashboardUser');
+Route::get('/isi-janji-temu', function (){
+    return view('form_appointment');
 });
 
 Route::get('/pilih-Dokter', function (){
     return view('pilDokter');
+});
+
+Route::get('/tele', function (){
+    return view('tele');
+});
+
+Route::get('/riwayat', function (){
+    return view('riwayat');
 });
