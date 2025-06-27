@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Chatify\Chatify;
 use App\Http\Controllers\RegisterPasienController;
+use App\Http\Controllers\ObatController;
 
 // Route tampil login
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
@@ -22,30 +23,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/chatify', [\Chatify\Http\Controllers\MessagesController::class, 'index'])->name('chatify');
 });
 
-Route::get('/dashboard', function (){
-    return view('dashboardUser');
-})->name('dashboard');
 
-Route::get('/dashboard3', function (){
-    return view('dashboard_ADM');
-});
-
-Route::get('/obat', function (){
-    return view('obat');
-});
 Route::get('/homepage', function (){
     return view('homepage');
 });
 Route::get('/obat2', function (){
     return view('obat2');
-});
-
-Route::get('/isi-janji-temu', function (){
-    return view('form_appointment');
-});
-
-Route::get('/pilih-Dokter', function (){
-    return view('pilDokter');
 });
 
 Route::get('/tele', function (){
@@ -55,3 +38,17 @@ Route::get('/tele', function (){
 Route::get('/riwayat', function (){
     return view('riwayat');
 });
+
+// route untuk dokter
+
+// route untuk user
+Route::get('/isi-janji-temu', function (){
+    return view('form_appointment');
+});
+Route::get('/pilih-Dokter', function (){
+    return view('pilDokter');
+});
+
+//route keseluruhan
+Route::get('/dashboard', [ObatController::class, 'dashboard'])->name('dashboard');
+Route::get('/obat', [ObatController::class, 'index'])->name('obat.index');

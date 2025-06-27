@@ -28,7 +28,13 @@
                             <i class="fas fa-sync-alt me-2"></i> Pending
                         </span>
                     </div>
-                </div><!--
+                </div>
+                <div class="card-footer">
+                    <a href="/isi-janji-temu">
+                        <button class="btn-action btn-detail"> Buat Janji</button>
+                    </a>
+                </div>
+                <!--
                 <div class="card-footer">
                     <button class="btn-action btn-detail">
                         <i class="fas fa-eye"></i> Detail Janji

@@ -1,7 +1,7 @@
 <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ asset('img/Logo2.png') }}" alt="logo" height="40px" >
+            <a href="/dashboard"><img src="{{ asset('img/Logo2.png') }}" alt="logo" height="40px" ></a>
         </div>
         <ul class="nav-links">
             <li><a href="/dashboard" class="">Beranda</a></li>

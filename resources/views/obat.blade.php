@@ -52,60 +52,26 @@
         <!-- Content -->
         <!-- Products Grid -->
         <div class="products-grid">
+            @foreach($obats as $obat)
             <div class="product-card">
                 <div class="product-img">
-                    <img src="{{ asset('img/VitC.jpeg') }}" alt="Vitamin C">
+                    <!-- Sesuaikan field dengan database -->
+                    <img src="{{ asset('storage/' . $obat->gambar_obat) }}" alt="{{ $obat->nama_obat }}">
                 </div>
                 <div class="product-content">
-                    <div class="product-category">Vitamin & Suplemen</div>
-                    <div class="product-name">Vitamin C 1000mg</div>
-                    <div class="product-price">Tablet</div>
+                    <div class="product-category">{{ $obat->kategori }}</div>
+                    <div class="product-name">{{ $obat->nama_obat }}</div>
+                    <div class="product-price">{{ $obat->jenis_obat }}</div>
                     <button class="add-to-cart">
                         <i class="fa-solid fa-circle-info"></i>Informasi Produk
                     </button>
                 </div>
             </div>
-            
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="{{ asset ('img/paracetamol.jpeg') }}" alt="Paracetamol">
-                </div>
-                <div class="product-content">
-                    <div class="product-category">Obat & Perawatan</div>
-                    <div class="product-name">Paracetamol 500mg</div>
-                    <div class="product-price">Tablet</div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-circle-info"></i>Informasi Produk
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="{{asset ('img/Salbutamol.jpeg') }}" alt="Obat Asma">
-                </div>
-                <div class="product-content">
-                    <div class="product-category">Asma</div>
-                    <div class="product-name">Salbutamol Inhaler</div>
-                    <div class="product-price">Inhaler</div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-circle-info"></i>Informasi Produk
-                    </button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="{{asset ('img/VitD.jpeg')}}" alt="Vitamin D">
-                </div>
-                <div class="product-content">
-                    <div class="product-category">Vitamin & Suplemen</div>
-                    <div class="product-name">Vitamin D3 1000IU</div>
-                    <div class="product-price">Tablet</div>
-                    <button class="add-to-cart">
-                        <i class="fa-solid fa-circle-info"></i>Informasi Produk
-                    </button>
-                </div>
-            </div>
+            @endforeach
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            {{ $obats->links() }}
         </div>
 @endsection

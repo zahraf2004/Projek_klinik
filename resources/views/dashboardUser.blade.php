@@ -56,50 +56,24 @@
         
             <div class="divider"></div>
             <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="{{ asset('img/VitC.jpeg') }}" alt="Vitamin C">
-                        </div>
-                    <div class="product-content">
-                        <div class="product-category">Vitamin & Suplemen</div>
-                        <div class="product-name">Vitamin C 1000mg</div>
-                        <div class="product-price">Tablet</div>
-                        <button class="add-to-cart">
-                            <i class="fa-solid fa-circle-info"></i>Informasi Produk
-                        </button>
-                    </div>
-                </div>
-                
+                @foreach($obats as $obat)
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="{{asset ('img/Salbutamol.jpeg') }}" alt="Obat Asma">
+                        <!-- Pastikan field 'gambar' ada di tabel database -->
+                        <img src="{{ asset('storage/' . $obat->gambar_obat) }}" alt="{{ $obat->nama_obat }}">
                     </div>
                     <div class="product-content">
-                        <div class="product-category">Asma</div>
-                        <div class="product-name">Salbutamol Inhaler</div>
-                        <div class="product-price">Inhaler</div>
+                        <div class="product-category">{{ $obat->kategori }}</div>
+                        <div class="product-name">{{ $obat->nama_obat }}</div>
+                        <div class="product-price">{{ $obat->jenis_obat }}</div>
                         <button class="add-to-cart">
-                            <i class="fa-solid fa-circle-info"></i>Informasi Produk
+                            <i class="fa-solid fa-circle-info"></i> Informasi Produk
                         </button>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="{{asset ('img/VitD.jpeg')}}" alt="Vitamin D">
-                    </div>
-                    <div class="product-content">
-                        <div class="product-category">Vitamin & Suplemen</div>
-                        <div class="product-name">Vitamin D3 1000IU</div>
-                        <div class="product-price">Tablet</div>
-                        <button class="add-to-cart">
-                            <i class="fa-solid fa-circle-info"></i>Informasi Produk
-                        </button>
-                    </div>
-                    
-                </div>
-                
+                @endforeach
             </div>
+            
             <div class="view-all">
                         <a href="/obat" class="view-all-btn">Lihat Semua Obat Vitamin & Suplemen</a>
             </div>
