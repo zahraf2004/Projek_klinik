@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use Chatify\Chatify;
 use App\Http\Controllers\RegisterPasienController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\DokterController;
 
 // Route tampil login
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
@@ -45,10 +46,11 @@ Route::get('/riwayat', function (){
 Route::get('/isi-janji-temu', function (){
     return view('form_appointment');
 });
-Route::get('/pilih-Dokter', function (){
-    return view('pilDokter');
-});
+Route::get('/pilih-Dokter', [DokterController::class, 'index'])->name('dokter.index');
 
 //route keseluruhan
 Route::get('/dashboard', [ObatController::class, 'dashboard'])->name('dashboard');
 Route::get('/obat', [ObatController::class, 'index'])->name('obat.index');
+Route::get('/tentang-kami', function (){
+    return view('about');
+});

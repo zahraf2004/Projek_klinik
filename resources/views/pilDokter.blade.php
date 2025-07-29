@@ -62,12 +62,13 @@
                         
                         <div class="doctors-grid">
                             <!-- Doctor 1 -->
+                             @foreach($dokters as $dokter)
                             <div class="doctor-card">
                                 <div class="doctor-header">
                                     <div class="doctor-avatar-sm">RS</div>
                                     <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Rina Susanti</h3>
-                                        <p class="doctor-specialty">Dokter Umum</p>
+                                        <h3 class="doctor-name">{{$dokter->nama_dokter}}</h3>
+                                        <p class="doctor-specialty">{{$dokter->spesialis}}</p>
                                     </div>
                                 </div>
                                 <div class="doctor-info-card">
@@ -75,14 +76,14 @@
                                         <div class="info-icon"><i class="fas fa-star"></i></div>
                                         <div class="info-text">
                                             <h4>Alumni</h4>
-                                            <p>univ</p>
+                                            <p>{{$dokter->alumnus}}</p>
                                         </div>
                                     </div>
                                     <div class="info-item">
                                         <div class="info-icon"><i class="fas fa-clock"></i></div>
                                         <div class="info-text">
                                             <h4>Tanggal Lahir</h4>
-                                            <p>12345</p>
+                                            <p>{{$dokter->tanggal_lahir}}</p>
                                         </div>
                                     </div>
                                     <div class="action-buttons">
@@ -90,162 +91,13 @@
                                         <!--  <a href="#" class="btnD btn-outline">Profil</a>-->
                                     </div>
                                 </div>
+                            </div>@endforeach
+                            
+                            <!-- Pagination -->
+                            <div class="pagination">
+                                {{ $dokters->links() }}
                             </div>
                             
-                            <!-- Doctor 2 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">DA</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Dedi Anggara</h3>
-                                        <p class="doctor-specialty">Spesialis Anak</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Alumni</h4>
-                                            <p>univ</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Tanggal Lahir</h4>
-                                            <p>12345</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btnD btn-primary">Chat Sekarang</a>
-                                        <!--<a href="#" class="btnD btn-outline">Profil</a>-->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 3 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">AS</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Anita Sari</h3>
-                                        <p class="doctor-specialty">Spesialis Kulit</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Alumni</h4>
-                                            <p>univ</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Tanggal Lahir</h4>
-                                            <p>12345</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btnD btn-primary">Chat Sekarang</a>
-                                        <!--<a href="#" class="btnD btn-outline">Profil</a>-->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 4 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">BP</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Bambang P.</h3>
-                                        <p class="doctor-specialty">Spesialis Jantung</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Alumni</h4>
-                                            <p>univ</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Tanggal Lahir</h4>
-                                            <p>12345</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btnD btn-primary">Chat Sekarang</a>
-                                        <!--<a href="#" class="btnD btn-outline">Profil</a>-->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 5 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">MS</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. M. Surya</h3>
-                                        <p class="doctor-specialty">Spesialis THT</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Alumni</h4>
-                                            <p>univ</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Tanggal Lahir</h4>
-                                            <p>12345</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btnD btn-primary">Chat Sekarang</a>
-                                        <!--<a href="#" class="btnD btn-outline">Profil</a>-->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 6 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">LW</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Lina Wijaya</h3>
-                                        <p class="doctor-specialty">Dokter Gigi</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Alumni</h4>
-                                            <p>univ</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Tanggal Lahir</h4>
-                                            <p>12345</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btnD btn-primary">Chat Sekarang</a>
-                                        <!-- <a href="#" class="btnD btn-outline">Profil</a> -->
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

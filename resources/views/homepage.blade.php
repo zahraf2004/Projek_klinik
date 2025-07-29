@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konsultasi Dokter Online - Klinik Pratama</title>
+    <title>Tentang Kami - Klinik Pratama</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -33,754 +33,541 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 0 20px;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-icon {
-            font-size: 28px;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 115, 232, 0.9), rgba(13, 71, 161, 0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
         }
         
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-        
-        .doctor-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .doctor-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-weight: bold;
+        .hero p {
             font-size: 20px;
-        }
-        
-        .doctor-details h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .doctor-details p {
-            font-size: 14px;
+            max-width: 700px;
+            margin: 0 auto;
             opacity: 0.9;
         }
         
-        /* Main Layout */
-        .main-content {
-            display: flex;
-            gap: 30px;
-            margin: 30px 0;
-        }
-        
-        .left-column {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .right-column {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .section-card {
-            background-color: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 30px;
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
         }
         
         .section-title {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
+            text-align: center;
+            margin-bottom: 50px;
             color: var(--primary-dark);
-            font-size: 24px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 70px 0;
+            margin: 60px 0;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        /* Vision Mission Section */
+        .vm-container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .vision, .mission {
+            flex: 1;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .vision:hover, .mission:hover {
+            transform: translateY(-10px);
+        }
+        
+        .vision {
+            border-top: 5px solid var(--accent);
+        }
+        
+        .mission {
+            border-top: 5px solid var(--primary);
+        }
+        
+        .vm-title {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
         
-        .section-title i {
-            font-size: 28px;
-            color: var(--primary);
-        }
-        
-        /* Telemedicine Section */
-        .telemedicine-content {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .telemedicine-image {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            border-radius: 12px;
+        .vm-title i {
+            font-size: 32px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 30px;
-            margin: 15px 0;
         }
         
-        .telemedicine-image i {
-            font-size: 120px;
+        .vision .vm-title i {
+            background-color: rgba(52, 168, 83, 0.1);
+            color: var(--accent);
+        }
+        
+        .mission .vm-title i {
+            background-color: rgba(26, 115, 232, 0.1);
             color: var(--primary);
-            opacity: 0.7;
         }
         
-        .benefits-list {
-            margin-top: 15px;
+        .vm-title h3 {
+            font-size: 28px;
+            color: var(--text);
+        }
+        
+        .vm-content p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        .vm-list {
             list-style: none;
+            margin-top: 20px;
         }
         
-        .benefits-list li {
+        .vm-list li {
             padding: 12px 0;
-            padding-left: 35px;
+            padding-left: 40px;
             position: relative;
             border-bottom: 1px solid #f0f0f0;
         }
         
-        .benefits-list li:last-child {
+        .vm-list li:last-child {
             border-bottom: none;
         }
         
-        .benefits-list li:before {
-            content: "\f00c";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
+        .vm-list li:before {
             position: absolute;
             left: 0;
             top: 12px;
-            color: var(--accent);
-            background-color: rgba(52, 168, 83, 0.1);
             width: 26px;
             height: 26px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 900;
+            font-family: "Font Awesome 5 Free";
         }
         
-        /* Doctors Section */
-        .doctors-section {
-            position: sticky;
-            top: 100px;
+        .vision .vm-list li:before {
+            content: "\f00c";
+            background-color: rgba(52, 168, 83, 0.1);
+            color: var(--accent);
         }
         
-        .doctors-grid {
+        .mission .vm-list li:before {
+            content: "\f105";
+            background-color: rgba(26, 115, 232, 0.1);
+            color: var(--primary);
+        }
+        
+        /* Team Section */
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
         
-        .doctor-card {
+        .team-member {
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #eaeaea;
-            display: flex;
-            flex-direction: column;
+            transition: transform 0.3s;
+            text-align: center;
         }
         
-        .doctor-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
         
-        .doctor-header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 20px 15px;
+        .member-image {
+            height: 280px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 25px 20px;
+        }
+        
+        .member-name {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .member-position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .member-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
             display: flex;
-            align-items: center;
+            justify-content: center;
             gap: 15px;
         }
         
-        .doctor-avatar-sm {
-            width: 60px;
-            height: 60px;
+        .social-links a {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background-color: white;
+            background-color: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-weight: bold;
-            font-size: 24px;
-            flex-shrink: 0;
+            transition: all 0.3s;
         }
         
-        .doctor-info-sm {
-            flex: 1;
-        }
-        
-        .doctor-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .doctor-specialty {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .doctor-info-card {
-            padding: 15px;
-        }
-        
-        .info-item {
-            display: flex;
-            margin-bottom: 12px;
-        }
-        
-        .info-icon {
-            color: var(--primary);
-            width: 25px;
-            font-size: 16px;
-            margin-top: 3px;
-        }
-        
-        .info-text {
-            flex: 1;
-        }
-        
-        .info-text h4 {
-            font-size: 14px;
-            margin-bottom: 3px;
-            color: var(--primary-dark);
-        }
-        
-        .info-text p {
-            font-size: 13px;
-            color: var(--text-light);
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            flex: 1;
-            border: none;
-            font-size: 13px;
-        }
-        
-        .btn-primary {
+        .social-links a:hover {
             background-color: var(--primary);
             color: white;
+            transform: translateY(-3px);
         }
         
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background-color: rgba(26, 115, 232, 0.1);
-        }
-        
-        /* Search Section */
-        .search-container {
-            background: white;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-        }
-        
-        .search-container input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 15px;
-        }
-        
-        .search-container button {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .search-container button:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .stat-card {
-            background: var(--secondary);
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            border: 1px solid #e0e0e0;
-        }
-        
-        .stat-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-light);
-        }
         
         /* Responsive */
         @media (max-width: 900px) {
-            .main-content {
+            .about-content,
+            .vm-container {
                 flex-direction: column;
             }
             
-            .doctors-section {
-                position: static;
+            .hero {
+                padding: 70px 20px;
             }
             
-            .doctors-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .hero h1 {
+                font-size: 36px;
             }
         }
         
         @media (max-width: 768px) {
-            .header-content {
+            
+            .stats-container {
                 flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .doctor-info {
-                justify-content: center;
-            }
-            
-            .doctors-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .search-container {
-                flex-direction: column;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-hospital"></i>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tentang Klinik Pratama</h1>
+            <p>Berdedikasi untuk memberikan pelayanan kesehatan terbaik dengan tim profesional dan fasilitas modern</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Sejarah Kami</h3>
+                    <p>Klinik Pratama didirikan pada tahun 2005 dengan tujuan memberikan akses pelayanan kesehatan berkualitas tinggi kepada masyarakat. Bermula dari sebuah klinik kecil dengan 2 dokter, kami telah berkembang menjadi jaringan kesehatan terpercaya dengan 15 cabang di seluruh Indonesia.</p>
+                    <p>Selama lebih dari 18 tahun, kami telah melayani jutaan pasien dengan komitmen untuk memberikan perawatan yang holistik, berbasis bukti, dan berfokus pada pasien. Kami percaya bahwa setiap individu berhak mendapatkan pelayanan kesehatan terbaik tanpa memandang latar belakang sosial atau ekonomi.</p>
+                    <p>Dengan dukungan teknologi terkini dan tim medis profesional, Klinik Pratama terus berinovasi dalam memberikan solusi kesehatan yang efektif dan terjangkau bagi seluruh masyarakat Indonesia.</p>
                 </div>
-                <div class="logo-text">Klinik Pratama</div>
-            </div>
-            
-            <div class="nav-links">
-                <a href="#"><i class="fas fa-home"></i> Beranda</a>
-                <a href="#"><i class="fas fa-history"></i> Riwayat</a>
-                <a href="#"><i class="fas fa-concierge-bell"></i> Layanan</a>
-                <a href="#"><i class="fas fa-info-circle"></i> Tentang</a>
-            </div>
-            
-            <div class="doctor-info">
-                <div class="doctor-avatar">DY</div>
-                <div class="doctor-details">
-                    <h3>Dr. Yanti</h3>
-                    <p>Dokter Umum</p>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Klinik Pratama">
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <div class="container">
-        <div class="main-content">
-            <!-- Kolom Kiri: Penjelasan Konsultasi -->
-            <div class="left-column">
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-laptop-medical"></i> Periplasan Telemedicine</h2>
-                    
-                    <div class="telemedicine-content">
-                        <p>Telemedicine adalah layanan konsultasi kesehatan jarak jauh menggunakan teknologi komunikasi. Dengan telemedicine, Anda dapat berkonsultasi dengan dokter tanpa harus datang langsung ke klinik.</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">18+</div>
+                    <div class="stat-label">Tahun Pengalaman</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Cabang Klinik</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Tenaga Medis</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1.5juta+</div>
+                    <div class="stat-label">Pasien Terlayani</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visi & Misi Kami</h2>
+            </div>
+            
+            <div class="vm-container">
+                <div class="vision">
+                    <div class="vm-title">
+                        <i class="fas fa-eye"></i>
+                        <h3>Visi</h3>
+                    </div>
+                    <div class="vm-content">
+                        <p>Menjadi penyedia layanan kesehatan terdepan yang diakui secara nasional untuk keunggulan klinis, inovasi, dan perawatan pasien yang berpusat pada manusia.</p>
                         
-                        <div class="telemedicine-image">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        
-                        <h3 style="margin: 15px 0; color: var(--primary-dark);">Manfaat Telemedicine:</h3>
-                        <ul class="benefits-list">
-                            <li>Konsultasi dari rumah tanpa perlu antri</li>
-                            <li>Menghemat waktu dan biaya transportasi</li>
-                            <li>Akses ke dokter spesialis lebih mudah</li>
-                            <li>Lebih aman dari risiko penularan penyakit</li>
-                            <li>Resep obat langsung dikirim ke apotek pilihan Anda</li>
-                            <li>Rekam medis digital yang terintegrasi</li>
+                        <ul class="vm-list">
+                            <li>Memimpin transformasi layanan kesehatan di Indonesia</li>
+                            <li>Menjadi rujukan utama untuk perawatan kesehatan berkualitas tinggi</li>
+                            <li>Mengintegrasikan teknologi terkini dalam pelayanan kesehatan</li>
+                            <li>Membangun ekosistem kesehatan yang berkelanjutan</li>
                         </ul>
                     </div>
-                </section>
+                </div>
                 
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-chart-line"></i> Statistik Penggunaan</h2>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-value">4.8/5</div>
-                            <div class="stat-label">Rating Pengguna</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">98%</div>
-                            <div class="stat-label">Kepuasan Pasien</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">15k+</div>
-                            <div class="stat-label">Konsultasi/Bulan</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">50+</div>
-                            <div class="stat-label">Dokter Tersedia</div>
-                        </div>
+                <div class="mission">
+                    <div class="vm-title">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Misi</h3>
                     </div>
-                </section>
+                    <div class="vm-content">
+                        <p>Memberikan pelayanan kesehatan yang komprehensif, terjangkau, dan berkualitas tinggi melalui:</p>
+                        
+                        <ul class="vm-list">
+                            <li>Tim medis profesional yang berdedikasi tinggi</li>
+                            <li>Fasilitas modern dan teknologi terkini</li>
+                            <li>Pendekatan holistik dalam perawatan pasien</li>
+                            <li>Program pencegahan dan edukasi kesehatan masyarakat</li>
+                            <li>Kolaborasi dengan institusi kesehatan terkemuka</li>
+                            <li>Layanan yang ramah dan mudah diakses oleh semua kalangan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" style="background-color: var(--secondary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tim Kepemimpinan</h2>
             </div>
             
-            <!-- Kolom Kanan: Daftar Dokter -->
-            <div class="right-column">
-                <div class="doctors-section">
-                    <div class="search-container">
-                        <input type="text" placeholder="Cari dokter berdasarkan nama atau spesialisasi...">
-                        <button><i class="fas fa-search"></i> Cari</button>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dr. Budi Santoso">
                     </div>
-                    
-                    <div class="section-card">
-                        <h2 class="section-title"><i class="fas fa-user-md"></i> Dokter Tersedia</h2>
-                        
-                        <div class="doctors-grid">
-                            <!-- Doctor 1 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">RS</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Rina Susanti</h3>
-                                        <p class="doctor-specialty">Dokter Umum</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Rating</h4>
-                                            <p>4.9 (1,245 ulasan)</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Jadwal</h4>
-                                            <p>Senin-Jumat: 08:00 - 15:00</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btn btn-primary">Chat Sekarang</a>
-                                        <a href="#" class="btn btn-outline">Profil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 2 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">DA</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Dedi Anggara</h3>
-                                        <p class="doctor-specialty">Spesialis Anak</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Rating</h4>
-                                            <p>4.8 (985 ulasan)</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Jadwal</h4>
-                                            <p>Senin-Sabtu: 10:00 - 17:00</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btn btn-primary">Chat Sekarang</a>
-                                        <a href="#" class="btn btn-outline">Profil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 3 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">AS</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Anita Sari</h3>
-                                        <p class="doctor-specialty">Spesialis Kulit</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Rating</h4>
-                                            <p>4.9 (1,120 ulasan)</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Jadwal</h4>
-                                            <p>Selasa-Jumat: 09:00 - 16:00</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btn btn-primary">Chat Sekarang</a>
-                                        <a href="#" class="btn btn-outline">Profil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 4 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">BP</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Bambang P.</h3>
-                                        <p class="doctor-specialty">Spesialis Jantung</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Rating</h4>
-                                            <p>4.7 (875 ulasan)</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Jadwal</h4>
-                                            <p>Senin-Kamis: 08:00 - 14:00</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btn btn-primary">Chat Sekarang</a>
-                                        <a href="#" class="btn btn-outline">Profil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 5 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">MS</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. M. Surya</h3>
-                                        <p class="doctor-specialty">Spesialis THT</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Rating</h4>
-                                            <p>4.8 (1,050 ulasan)</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Jadwal</h4>
-                                            <p>Rabu-Minggu: 09:00 - 16:00</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btn btn-primary">Chat Sekarang</a>
-                                        <a href="#" class="btn btn-outline">Profil</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Doctor 6 -->
-                            <div class="doctor-card">
-                                <div class="doctor-header">
-                                    <div class="doctor-avatar-sm">LW</div>
-                                    <div class="doctor-info-sm">
-                                        <h3 class="doctor-name">Dr. Lina Wijaya</h3>
-                                        <p class="doctor-specialty">Dokter Gigi</p>
-                                    </div>
-                                </div>
-                                <div class="doctor-info-card">
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-star"></i></div>
-                                        <div class="info-text">
-                                            <h4>Rating</h4>
-                                            <p>4.9 (980 ulasan)</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <div class="info-icon"><i class="fas fa-clock"></i></div>
-                                        <div class="info-text">
-                                            <h4>Jadwal</h4>
-                                            <p>Senin-Jumat: 10:00 - 18:00</p>
-                                        </div>
-                                    </div>
-                                    <div class="action-buttons">
-                                        <a href="#" class="btn btn-primary">Chat Sekarang</a>
-                                        <a href="#" class="btn btn-outline">Profil</a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Dr. Budi Santoso</h3>
+                        <div class="member-position">Direktur Utama</div>
+                        <p class="member-description">Dokter spesialis penyakit dalam dengan pengalaman 25 tahun di bidang kesehatan.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dr. Siti Rahayu">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Dr. Siti Rahayu</h3>
+                        <div class="member-position">Direktur Medis</div>
+                        <p class="member-description">Dokter spesialis anak dengan fokus pada pengembangan layanan kesehatan anak.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dr. Agus Wijaya">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Dr. Agus Wijaya</h3>
+                        <div class="member-position">Kepala Bidang Penelitian</div>
+                        <p class="member-description">Dokter spesialis bedah dengan minat penelitian di bidang teknologi kesehatan.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
+    
     <script>
-        // Animasi untuk card dokter
-        const doctorCards = document.querySelectorAll('.doctor-card');
-        doctorCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-7px)';
-                card.style.boxShadow = '0 12px 25px rgba(0, 0, 0, 0.15)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-            });
-        });
-        
-        // Fungsi pencarian dokter
-        const searchInput = document.querySelector('.search-container input');
-        const searchButton = document.querySelector('.search-container button');
-        
-        searchButton.addEventListener('click', searchDoctors);
-        searchInput.addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                searchDoctors();
-            }
-        });
-        
-        function searchDoctors() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const doctorCards = document.querySelectorAll('.doctor-card');
-            
-            doctorCards.forEach(card => {
-                const doctorName = card.querySelector('.doctor-name').textContent.toLowerCase();
-                const specialty = card.querySelector('.doctor-specialty').textContent.toLowerCase();
+        // Animasi saat scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.about-image, .vision, .mission, .team-member');
                 
-                if (doctorName.includes(searchTerm) || specialty.includes(searchTerm)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if(elementPosition < screenPosition) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            // Set initial state
+            const animatedElements = document.querySelectorAll('.about-image, .vision, .mission, .team-member');
+            animatedElements.forEach(el => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
             });
-        }
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Trigger once on load
+            animateOnScroll();
+        });
     </script>
 </body>
 </html>

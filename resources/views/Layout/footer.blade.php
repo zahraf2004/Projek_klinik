@@ -59,7 +59,7 @@
                             </div>
                             <div class="contact-details-footer">
                                 <h4>Email</h4>
-                                <p>info@klinikplus.com</p>
+                                <p>info@klinikPratamaDrYanti.com</p>
                             </div>
                         </li>
                     </ul>
@@ -67,6 +67,6 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 KLINIK+. Hak Cipta Dilindungi. | Dibuat dengan <i class="fas fa-heart" style="color: #ff6b6b;"></i> untuk kesehatan Anda</p>
+                <p>&copy; 2025 KLINIK Pratama Dokter Yanti. Hak Cipta Dilindungi. | Dibuat dengan <i class="fas fa-heart" style="color: #ff6b6b;"></i> untuk kesehatan Anda</p>
             </div>
         </footer>
