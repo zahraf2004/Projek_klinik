@@ -6,6 +6,7 @@ use Chatify\Chatify;
 use App\Http\Controllers\RegisterPasienController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\AppointmentController;
 
 // Route tampil login
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
@@ -36,9 +37,8 @@ Route::get('/tele', function (){
     return view('tele');
 });
 
-Route::get('/riwayat', function (){
-    return view('riwayat');
-});
+Route::get('/riwayat', [AppointmentController::class, 'riwayat'])->name('riwayat');
+
 
 // route untuk dokter
 
@@ -46,6 +46,7 @@ Route::get('/riwayat', function (){
 Route::get('/isi-janji-temu', function (){
     return view('form_appointment');
 });
+Route::post('/isi-janji-temu', [AppointmentController::class, 'store'])->name('appointment.store');
 Route::get('/pilih-Dokter', [DokterController::class, 'index'])->name('dokter.index');
 
 //route keseluruhan
@@ -53,4 +54,10 @@ Route::get('/dashboard', [ObatController::class, 'dashboard'])->name('dashboard'
 Route::get('/obat', [ObatController::class, 'index'])->name('obat.index');
 Route::get('/tentang-kami', function (){
     return view('about');
+});
+Route::get('/layanan-kami', function (){
+    return view('layanan');
+});
+Route::get('/kontak-kami', function (){
+    return view('contact');
 });

@@ -80,44 +80,71 @@
             });
 
             const doctorCards = document.querySelectorAll('.doctor-card');
-        doctorCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-7px)';
-                card.style.boxShadow = '0 12px 25px rgba(0, 0, 0, 0.15)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-            });
-        });
-        
-        // Fungsi pencarian dokter
-        const searchInput = document.querySelector('.search-container input');
-        const searchButton = document.querySelector('.search-container button');
-        
-        searchButton.addEventListener('click', searchDoctors);
-        searchInput.addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                searchDoctors();
-            }
-        });
-        
-        function searchDoctors() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const doctorCards = document.querySelectorAll('.doctor-card');
-            
             doctorCards.forEach(card => {
-                const doctorName = card.querySelector('.doctor-name').textContent.toLowerCase();
-                const specialty = card.querySelector('.doctor-specialty').textContent.toLowerCase();
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-7px)';
+                    card.style.boxShadow = '0 12px 25px rgba(0, 0, 0, 0.15)';
+                });
                 
-                if (doctorName.includes(searchTerm) || specialty.includes(searchTerm)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+                });
+            });
+        
+            // Fungsi pencarian dokter
+            const searchInput = document.querySelector('.search-container input');
+            const searchButton = document.querySelector('.search-container button');
+            
+            searchButton.addEventListener('click', searchDoctors);
+            searchInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    searchDoctors();
                 }
             });
-        }
+            
+            function searchDoctors() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const doctorCards = document.querySelectorAll('.doctor-card');
+                
+                doctorCards.forEach(card => {
+                    const doctorName = card.querySelector('.doctor-name').textContent.toLowerCase();
+                    const specialty = card.querySelector('.doctor-specialty').textContent.toLowerCase();
+                    
+                    if (doctorName.includes(searchTerm) || specialty.includes(searchTerm)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            document.addEventListener('DOMContentLoaded', function () {
+                const elements = document.querySelectorAll('.about-image, .vision, .mission');
+
+                // Set initial state
+                elements.forEach(el => {
+                    el.style.opacity = "0";
+                    el.style.transform = "translateY(30px)";
+                    el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+                });
+
+                const animateOnScroll = function () {
+                    elements.forEach(element => {
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const screenPosition = window.innerHeight / 1.3;
+
+                        if (elementPosition < screenPosition) {
+                            element.style.opacity = "1";
+                            element.style.transform = "translateY(0)";
+                        }
+                    });
+                };
+
+                window.addEventListener('scroll', animateOnScroll);
+                animateOnScroll(); // Trigger once on load
+            });
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

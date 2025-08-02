@@ -6,45 +6,51 @@
         
         <!-- Appointment List -->
         <div class="appointment-list">
-            <div class="appointment-card">
-                <div class="cardheader">
-                    <h3 class="patient-name">Tias Lufiani</h3>
-                    <div class="appointment-date">
-                        <i class="fas fa-calendar-alt me-2"></i> 20 Juni 2025
-                    </div>
+    @foreach ($appointments as $app)
+        <div class="appointment-card">
+            <div class="cardheader">
+                <h3 class="patient-name">{{ $app->nama }}</h3>
+                <div class="appointment-date">
+                    <i class="fas fa-calendar-alt me-2"></i> 
+                    {{ \Carbon\Carbon::parse($app->tanggal)->translatedFormat('d F Y') }}
                 </div>
-                <div class="card-body">
-                    <div class="info-item">
-                        <span class="info-label">Waktu:</span>
-                        <span class="info-value">10.00 WIB</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Keluhan:</span>
-                        <span class="info-value">Demam tinggi selama 3 hari, disertai batuk dan pilek</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Status:</span>
-                        <span class="status-badge status-processing">
-                            <i class="fas fa-sync-alt me-2"></i> Pending
-                        </span>
-                    </div>
+            </div>
+            <div class="card-body">
+                <div class="info-item">
+                    <span class="info-label">Waktu:</span>
+                    <span class="info-value">{{ \Carbon\Carbon::parse($app->jam)->format('H:i') }} WIB</span>
                 </div>
-                <div class="card-footer">
-                    <a href="/isi-janji-temu">
-                        <button class="btn-action btn-detail"> Buat Janji</button>
-                    </a>
+                <div class="info-item">
+                    <span class="info-label">Keluhan:</span>
+                    <span class="info-value">{{ $app->keluhan }}</span>
                 </div>
-                <!--
-                <div class="card-footer">
-                    <button class="btn-action btn-detail">
-                        <i class="fas fa-eye"></i> Detail Janji
-                    </button>
-                    <button class="btn-action btn-cancel">
-                        <i class="fas fa-times"></i> Batalkan
-                    </button>
-                </div> -->
+                <div class="info-item">
+                    <span class="info-label">Status:</span>
+                    <span class="status-badge
+                        @if($app->status == 'pending') status-processing
+                        @elseif($app->status == 'confirmed') status-confirmed
+                        @elseif($app->status == 'completed') status-completed
+                        @elseif($app->status == 'cancelled') status-cancelled
+                        @elseif($app->status == 'rescheduled') status-rescheduled
+                        @endif
+                    ">
+                        <i class="fas fa-sync-alt me-2"></i> {{ ucfirst($app->status) }}
+                    </span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="/isi-janji-temu">
+                    <button class="btn-action btn-detail"> Buat Janji</button>
+                </a>
             </div>
         </div>
+    @endforeach
+
+    @if ($appointments->isEmpty())
+        <p class="text-muted">Belum ada janji temu.</p>
+    @endif
+</div>
+
         
         <!-- Empty State (if no appointments) -->
         <!--

@@ -11,7 +11,8 @@
             </div>
 
             <!-- Data FORM -->
-            <form>
+            <form  method="POST" action="{{ route('appointment.store') }}">
+                @csrf
                 <div class="form1">
                     <section id="step-1" class="form-step">
                         <h4 class="card-title"><i class="fas fa-calendar-check"></i> Buat Janji Temu</h4>
@@ -25,17 +26,21 @@
                                 
                                 <div class="form-group">
                                     <label>Nama Lengkap</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Nama Pasien" required />
+                                        <input type="text" class="form-control" name="nama" placeholder="Nama Pasien" required />
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>Nomor Handphone</label>
-                                    <input type="tel" class="form-control" name="phone" placeholder="Nomor Handphone" required />
+                                    <input type="tel" class="form-control" name="no_hp" placeholder="Nomor Handphone" required />
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>Alamat</label>
-                                    <input type="text" class="form-control" name="address" placeholder="Alamat lengkap" required />
+                                    <input type="text" class="form-control" name="alamat" placeholder="Alamat lengkap" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal Lahir</label>
+                                    <input type="date" class="form-control" name="tanggal_lahir" required />
                                 </div>
                             </div>
                             
@@ -46,18 +51,18 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label>Tanggal Lahir</label>
-                                    <input type="date" class="form-control" name="birthdate" required />
+                                    <label>Tanggal Janji Temu</label>
+                                    <input type="date" class="form-control" name="tanggal" required />
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label>Tanggal Janji Temu</label>
-                                    <input type="date" class="form-control" name="appointment_date" required />
+                                    <label>Jam </label>
+                                    <input type="time" class="form-control" name="jam" required />
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>Keluhan</label>
-                                    <textarea class="form-control" name="complaint" rows="3" placeholder="Jelaskan keluhan Anda secara rinci"></textarea>
+                                    <textarea class="form-control" name="keluhan" rows="3" placeholder="Jelaskan keluhan Anda secara rinci"></textarea>
                                 </div>
                             </div>
                         </div>

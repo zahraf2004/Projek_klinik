@@ -16,10 +16,8 @@
                     <h3>Layanan Kami</h3>
                     <ul class="footer-links">
                         <li><a href="/chatify"><i class="fas fa-stethoscope"></i> Konsultasi Dokter</a></li>
-                        <li><a href="#"><i class="fa-regular fa-calendar"></i> Atur Jadwal Temu</a></li>
-                        <li><a href="#"><i class="fas fa-pills"></i> Layanan Kesehatan</a></li>
-                        <li><a href="#"><i class="fas fa-baby"></i> KB</a></li>
-                        <li><a href="#"><i class="fas fa-flask"></i> Cek Lab</a></li>
+                        <li><a href="riwayat"><i class="fa-regular fa-calendar"></i> Atur Jadwal Temu</a></li>
+                        <li><a href="/layanan-kami"><i class="fas fa-pills"></i> Layanan Kesehatan</a></li>
                     </ul>
                 </div>
                 
@@ -27,8 +25,8 @@
                     <h3>Link Cepat</h3>
                     <ul class="footer-links">
                         <li><a href="/dashboard"><i class="fas fa-home"></i> Beranda</a></li>
-                        <li><a href="#"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
-                        <li><a href="#"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+                        <li><a href="/tentang-kami"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+                        <li><a href="/kontak-kami"><i class="fas fa-phone-alt"></i> Kontak</a></li>
                     </ul>
                 </div>
                 

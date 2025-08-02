@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami - Klinik Pratama</title>
+    <title>Kontak Kami - Klinik Pratama</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -36,9 +36,61 @@
             padding: 0 20px;
         }
         
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 28px;
+            color: white;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 115, 232, 0.9), rgba(13, 71, 161, 0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(26, 115, 232, 0.8), rgba(13, 71, 161, 0.9)), url('https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -60,304 +112,377 @@
             opacity: 0.9;
         }
         
-        /* Section Styles */
-        .section {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-dark);
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-        }
-        
-        /* About Section */
-        .about-content {
+        /* Main Contact Section */
+        .contact-main {
             display: flex;
             gap: 40px;
-            align-items: center;
             margin-bottom: 60px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 28px;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 17px;
-            line-height: 1.8;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-        
-        .about-image img:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 70px 0;
-            margin: 60px 0;
-        }
-        
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
-            gap: 30px;
-            text-align: center;
         }
         
-        .stat-item {
-            min-width: 200px;
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 20px;
-            opacity: 0.9;
-        }
-        
-        /* Vision Mission Section */
-        .vm-container {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        
-        .vision, .mission {
+        .contact-info {
             flex: 1;
-            background: white;
+            min-width: 300px;
+        }
+        
+        .contact-map {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .section-card {
+            background-color: white;
             border-radius: 16px;
             padding: 40px;
             box-shadow: var(--card-shadow);
-            transition: transform 0.3s;
+            height: 100%;
         }
         
-        .vision:hover, .mission:hover {
-            transform: translateY(-10px);
-        }
-        
-        .vision {
-            border-top: 5px solid var(--accent);
-        }
-        
-        .mission {
-            border-top: 5px solid var(--primary);
-        }
-        
-        .vm-title {
+        .section-title {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-size: 28px;
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 25px;
         }
         
-        .vm-title i {
+        .section-title i {
             font-size: 32px;
+            color: var(--primary);
+        }
+        
+        /* Contact Information */
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
             width: 60px;
             height: 60px;
+            background-color: var(--secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .vision .vm-title i {
-            background-color: rgba(52, 168, 83, 0.1);
-            color: var(--accent);
-        }
-        
-        .mission .vm-title i {
-            background-color: rgba(26, 115, 232, 0.1);
             color: var(--primary);
+            font-size: 24px;
+            flex-shrink: 0;
         }
         
-        .vm-title h3 {
-            font-size: 28px;
-            color: var(--text);
-        }
-        
-        .vm-content p {
-            margin-bottom: 20px;
-            font-size: 17px;
-            line-height: 1.8;
-        }
-        
-        .vm-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-        
-        .vm-list li {
-            padding: 12px 0;
-            padding-left: 40px;
-            position: relative;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .vm-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .vm-list li:before {
-            position: absolute;
-            left: 0;
-            top: 12px;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-family: "Font Awesome 5 Free";
-        }
-        
-        .vision .vm-list li:before {
-            content: "\f00c";
-            background-color: rgba(52, 168, 83, 0.1);
-            color: var(--accent);
-        }
-        
-        .mission .vm-list li:before {
-            content: "\f105";
-            background-color: rgba(26, 115, 232, 0.1);
-            color: var(--primary);
-        }
-        
-        /* Team Section */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .team-member {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s;
-            text-align: center;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-        
-        .member-image {
-            height: 280px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .team-member:hover .member-image img {
-            transform: scale(1.1);
-        }
-        
-        .member-info {
-            padding: 25px 20px;
-        }
-        
-        .member-name {
+        .contact-details h3 {
             font-size: 22px;
+            margin-bottom: 8px;
             color: var(--primary-dark);
+        }
+        
+        .contact-details p {
+            font-size: 17px;
+            color: var(--text-light);
             margin-bottom: 5px;
         }
         
-        .member-position {
+        .contact-details a {
             color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Working Hours */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-table td {
+            padding: 12px 0;
+            font-size: 16px;
+        }
+        
+        .hours-table td:first-child {
+            font-weight: 500;
+        }
+        
+        .hours-table td:last-child {
+            text-align: right;
+            color: var(--text-light);
+        }
+        
+        /* Map Section */
+        .map-container {
+            height: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            background-color: #e9ecef;
+            position: relative;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .map-overlay-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        .map-overlay-content p {
+            margin-bottom: 5px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .directions-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
             font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .directions-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        }
+        
+        .map-placeholder i {
+            font-size: 100px;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+        
+        /* Services Section */
+        .services-section {
+            margin-bottom: 60px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 32px;
+        }
+        
+        .service-title {
+            font-size: 22px;
+            color: var(--primary-dark);
             margin-bottom: 15px;
         }
         
-        .member-description {
+        .service-description {
             color: var(--text-light);
             margin-bottom: 20px;
         }
         
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .service-contact {
+            font-weight: 600;
             color: var(--primary);
-            transition: all 0.3s;
         }
         
-        .social-links a:hover {
-            background-color: var(--primary);
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+        
+        .faq-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .faq-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .faq-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .faq-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-question i {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 4px;
+        }
+        
+        .faq-question h3 {
+            font-size: 18px;
+            color: var(--primary-dark);
+        }
+        
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text);
             color: white;
-            transform: translateY(-3px);
+            padding: 60px 0 20px;
         }
         
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .contact-info-footer {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+        
+        .contact-info-footer i {
+            color: var(--primary);
+            margin-top: 4px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
         
         /* Responsive */
-        @media (max-width: 900px) {
-            .about-content,
-            .vm-container {
+        @media (max-width: 768px) {
+            .header-content {
                 flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
             }
             
             .hero {
@@ -367,206 +492,316 @@
             .hero h1 {
                 font-size: 36px;
             }
-        }
-        
-        @media (max-width: 768px) {
             
-            .stats-container {
-                flex-direction: column;
-                align-items: center;
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .map-overlay {
+                position: relative;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin-top: 20px;
             }
         }
     </style>
 </head>
 <body>
-    
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <div class="logo-text">Klinik Pratama</div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#"><i class="fas fa-home"></i> Beranda</a>
+                <a href="#"><i class="fas fa-history"></i> Riwayat</a>
+                <a href="#"><i class="fas fa-concierge-bell"></i> Layanan</a>
+                <a href="#"><i class="fas fa-info-circle"></i> Tentang</a>
+                <a href="#"><i class="fas fa-phone-alt"></i> Kontak</a>
+            </div>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Tentang Klinik Pratama</h1>
-            <p>Berdedikasi untuk memberikan pelayanan kesehatan terbaik dengan tim profesional dan fasilitas modern</p>
+            <h1>Hubungi Kami</h1>
+            <p>Tim Klinik Pratama siap membantu Anda. Kami senang mendengar dari Anda</p>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Sejarah Kami</h3>
-                    <p>Klinik Pratama didirikan pada tahun 2005 dengan tujuan memberikan akses pelayanan kesehatan berkualitas tinggi kepada masyarakat. Bermula dari sebuah klinik kecil dengan 2 dokter, kami telah berkembang menjadi jaringan kesehatan terpercaya dengan 15 cabang di seluruh Indonesia.</p>
-                    <p>Selama lebih dari 18 tahun, kami telah melayani jutaan pasien dengan komitmen untuk memberikan perawatan yang holistik, berbasis bukti, dan berfokus pada pasien. Kami percaya bahwa setiap individu berhak mendapatkan pelayanan kesehatan terbaik tanpa memandang latar belakang sosial atau ekonomi.</p>
-                    <p>Dengan dukungan teknologi terkini dan tim medis profesional, Klinik Pratama terus berinovasi dalam memberikan solusi kesehatan yang efektif dan terjangkau bagi seluruh masyarakat Indonesia.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Klinik Pratama">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number">18+</div>
-                    <div class="stat-label">Tahun Pengalaman</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15</div>
-                    <div class="stat-label">Cabang Klinik</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-label">Tenaga Medis</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">1.5juta+</div>
-                    <div class="stat-label">Pasien Terlayani</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vision & Mission Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Visi & Misi Kami</h2>
-            </div>
-            
-            <div class="vm-container">
-                <div class="vision">
-                    <div class="vm-title">
-                        <i class="fas fa-eye"></i>
-                        <h3>Visi</h3>
-                    </div>
-                    <div class="vm-content">
-                        <p>Menjadi penyedia layanan kesehatan terdepan yang diakui secara nasional untuk keunggulan klinis, inovasi, dan perawatan pasien yang berpusat pada manusia.</p>
-                        
-                        <ul class="vm-list">
-                            <li>Memimpin transformasi layanan kesehatan di Indonesia</li>
-                            <li>Menjadi rujukan utama untuk perawatan kesehatan berkualitas tinggi</li>
-                            <li>Mengintegrasikan teknologi terkini dalam pelayanan kesehatan</li>
-                            <li>Membangun ekosistem kesehatan yang berkelanjutan</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mission">
-                    <div class="vm-title">
-                        <i class="fas fa-bullseye"></i>
-                        <h3>Misi</h3>
-                    </div>
-                    <div class="vm-content">
-                        <p>Memberikan pelayanan kesehatan yang komprehensif, terjangkau, dan berkualitas tinggi melalui:</p>
-                        
-                        <ul class="vm-list">
-                            <li>Tim medis profesional yang berdedikasi tinggi</li>
-                            <li>Fasilitas modern dan teknologi terkini</li>
-                            <li>Pendekatan holistik dalam perawatan pasien</li>
-                            <li>Program pencegahan dan edukasi kesehatan masyarakat</li>
-                            <li>Kolaborasi dengan institusi kesehatan terkemuka</li>
-                            <li>Layanan yang ramah dan mudah diakses oleh semua kalangan</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="section" style="background-color: var(--secondary);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tim Kepemimpinan</h2>
-            </div>
-            
-            <div class="team-grid">
-                <!-- Team Member 1 -->
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dr. Budi Santoso">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Dr. Budi Santoso</h3>
-                        <div class="member-position">Direktur Utama</div>
-                        <p class="member-description">Dokter spesialis penyakit dalam dengan pengalaman 25 tahun di bidang kesehatan.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Team Member 2 -->
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dr. Siti Rahayu">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Dr. Siti Rahayu</h3>
-                        <div class="member-position">Direktur Medis</div>
-                        <p class="member-description">Dokter spesialis anak dengan fokus pada pengembangan layanan kesehatan anak.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Team Member 3 -->
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dr. Agus Wijaya">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Dr. Agus Wijaya</h3>
-                        <div class="member-position">Kepala Bidang Penelitian</div>
-                        <p class="member-description">Dokter spesialis bedah dengan minat penelitian di bidang teknologi kesehatan.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-        // Animasi saat scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.about-image, .vision, .mission, .team-member');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
+    <!-- Main Contact Section -->
+    <div class="container">
+        <div class="contact-main">
+            <div class="contact-info">
+                <div class="section-card">
+                    <h2 class="section-title"><i class="fas fa-info-circle"></i> Informasi Kontak</h2>
                     
-                    if(elementPosition < screenPosition) {
-                        element.style.opacity = "1";
-                        element.style.transform = "translateY(0)";
-                    }
-                });
-            };
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Alamat Kami</h3>
+                            <p>Jl. Kesehatan No. 123, Jakarta Selatan</p>
+                            <p>Gedung Medika Center Lt. 5</p>
+                            <p>DKI Jakarta 12560</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Telepon</h3>
+                            <p><a href="tel:+622112345678">(021) 1234-5678</a></p>
+                            <p><a href="tel:+628112345678">0811-2345-678</a> (Emergency)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@klinikpratama.com">info@klinikpratama.com</a></p>
+                            <p><a href="mailto:appointment@klinikpratama.com">appointment@klinikpratama.com</a> (Janji Temu)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Jam Operasional</h3>
+                            <table class="hours-table">
+                                <tr>
+                                    <td>Senin - Jumat</td>
+                                    <td>08:00 - 21:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Sabtu</td>
+                                    <td>08:00 - 17:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Minggu</td>
+                                    <td>09:00 - 15:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Hari Libur</td>
+                                    <td>09:00 - 13:00</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Media Sosial</h3>
+                            <div class="social-icons" style="display: flex; gap: 15px; margin-top: 10px;">
+                                <a href="#" style="width: 45px; height: 45px; background-color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 20px; transition: all 0.3s;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" style="width: 45px; height: 45px; background-color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 20px; transition: all 0.3s;">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" style="width: 45px; height: 45px; background-color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 20px; transition: all 0.3s;">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            // Set initial state
-            const animatedElements = document.querySelectorAll('.about-image, .vision, .mission, .team-member');
-            animatedElements.forEach(el => {
-                el.style.opacity = "0";
-                el.style.transform = "translateY(30px)";
-                el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            <div class="contact-map">
+                <div class="map-container">
+                    <div class="map-overlay">
+                        <div class="map-overlay-content">
+                            <h3>Klinik Pratama Jakarta</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> Jl. Kesehatan No. 123, Jakarta Selatan</p>
+                        </div>
+                        <a href="#" class="directions-btn">
+                            <i class="fas fa-route"></i> Petunjuk Arah
+                        </a>
+                    </div>
+                    
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <!-- Di implementasi nyata, ini akan diganti dengan iframe Google Maps -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Services Section -->
+        <div class="services-section">
+            <h2 class="section-title" style="border: none; padding: 0; margin-bottom: 30px;"><i class="fas fa-concierge-bell"></i> Layanan Kontak Kami</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="service-title">Janji Temu</h3>
+                    <p class="service-description">Jadwalkan kunjungan Anda dengan dokter spesialis pilihan melalui berbagai saluran kontak kami.</p>
+                    <p class="service-contact"><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3 class="service-title">Layanan Darurat</h3>
+                    <p class="service-description">Layanan gawat darurat 24 jam dengan tim medis siap siaga kapan pun Anda membutuhkan.</p>
+                    <p class="service-contact"><i class="fas fa-phone"></i> 0811-2345-678</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="service-title">Dukungan Pelanggan</h3>
+                    <p class="service-description">Tim customer service kami siap membantu pertanyaan dan keluhan Anda setiap hari kerja.</p>
+                    <p class="service-contact"><i class="fas fa-envelope"></i> support@klinikpratama.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="section-title" style="border: none; padding: 0; margin-bottom: 30px;"><i class="fas fa-question-circle"></i> Pertanyaan Umum</h2>
+            
+            <div class="faq-container">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-question"></i>
+                        <h3>Bagaimana cara membuat janji temu?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Anda dapat membuat janji temu melalui telepon, WhatsApp, atau email. Kami sarankan membuat janji minimal 1 hari sebelumnya.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-question"></i>
+                        <h3>Apakah klinik menerima BPJS?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, Klinik Pratama merupakan mitra BPJS Kesehatan. Silakan membawa kartu BPJS dan surat rujukan dari faskes tingkat pertama.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-question"></i>
+                        <h3>Berapa lama waktu tunggu untuk konsultasi?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Dengan sistem janji temu, waktu tunggu biasanya tidak lebih dari 15 menit. Untuk pasien tanpa janji, waktu tunggu bervariasi tergantung antrian.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-question"></i>
+                        <h3>Apakah ada layanan gawat darurat?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan layanan gawat darurat 24 jam. Untuk keadaan darurat, silakan langsung datang ke klinik atau hubungi nomor emergency kami.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Klinik Pratama</h3>
+                <p style="margin-bottom: 20px; color: #e0e0e0;">Memberikan pelayanan kesehatan terbaik dengan tim dokter profesional dan fasilitas modern.</p>
+                <div class="social-icons" style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Layanan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Konsultasi Dokter Umum</a></li>
+                    <li><a href="#">Konsultasi Spesialis</a></li>
+                    <li><a href="#">Pemeriksaan Lab</a></li>
+                    <li><a href="#">Vaksinasi</a></li>
+                    <li><a href="#">Pemeriksaan Kesehatan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Kontak Kami</h3>
+                <div class="contact-info-footer">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Jl. Kesehatan No. 123, Jakarta Selatan, Indonesia</p>
+                </div>
+                <div class="contact-info-footer">
+                    <i class="fas fa-phone"></i>
+                    <p>(021) 1234-5678</p>
+                </div>
+                <div class="contact-info-footer">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@klinikpratama.com</p>
+                </div>
+                <div class="contact-info-footer">
+                    <i class="fas fa-clock"></i>
+                    <p>Senin-Minggu: 07:00 - 21:00</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 Klinik Pratama. Hak Cipta Dilindungi.
+        </div>
+    </footer>
+
+    <script>
+        // Animasi untuk card
+        const cards = document.querySelectorAll('.service-card, .faq-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 12px 25px rgba(0, 0, 0, 0.15)';
             });
             
-            window.addEventListener('scroll', animateOnScroll);
-            // Trigger once on load
-            animateOnScroll();
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+            });
+        });
+        
+        // Animasi untuk tombol petunjuk arah
+        const directionBtn = document.querySelector('.directions-btn');
+        directionBtn.addEventListener('mouseenter', () => {
+            directionBtn.style.transform = 'translateY(-3px)';
+        });
+        
+        directionBtn.addEventListener('mouseleave', () => {
+            directionBtn.style.transform = 'translateY(0)';
         });
     </script>
 </body>

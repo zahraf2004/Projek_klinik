@@ -46,11 +46,14 @@
                 <div class="vision">
                     <div class="vm-title">
                         <i class="fas fa-eye"></i>
-                        <h3>Visi & Misi</h3>
+                        <h3>Visi</h3>
                     </div>
                     <div class="vm-content">
                         <p>Menjadi Klinik Pratama Terbaik Dengan Pelayanan Berkualitas, Profesionalitas, dan Berorientasi Pasien</p>
-                        
+                        <div class="vm-title">
+                            <i class="fas fa-eye"></i>
+                            <h3>Misi</h3>
+                        </div>
                         <ul class="vm-list">
                             <li>Memberikan layanan kesehatan prima dengan pemanfaatan informasi dan teknologi medis</li>
                             <li>Mengutamakan kepercayaan dan kepuasan pasien dengan memberikan pelayanan kesehatan prima</li>

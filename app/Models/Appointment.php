@@ -10,5 +10,18 @@ class Appointment extends Model
     use HasFactory;
     protected $table = 'appointments';
 
-    protected $guarded =[];
+    protected $fillable =[
+        'nama',
+        'no_hp',
+        'alamat',
+        'tanggal_lahir',
+        'alamat',
+        'tanggal',
+        'jam',
+        'keluhan',
+        'status',
+        'admin_notes',
+        'confirmed_by',
+        'confirmed_at',
+    ];
 }
