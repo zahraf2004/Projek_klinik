@@ -2,7 +2,7 @@
 @section('content2')
 <div class="container">
         <!-- Page Title -->
-        <h1 class="page-title">Riwayat Janji Temu</h1>
+        <h1 class="page-title">Riwayat Janji Berobat</h1>
         
         <!-- Appointment List -->
         <div class="appointment-list">
@@ -36,6 +36,10 @@
                     ">
                         <i class="fas fa-sync-alt me-2"></i> {{ ucfirst($app->status) }}
                     </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Catatan:</span>
+                    <span class="info-value">{{ $app->admin_notes }}</span>
                 </div>
             </div>
             <div class="card-footer">

@@ -1288,7 +1288,7 @@ textarea.form-control {
 
 .patient-name {
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--primary);
     margin: 0;
 }
@@ -1299,7 +1299,7 @@ textarea.form-control {
     padding: 5px 15px;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
 }
 
 .card-body {
@@ -1315,32 +1315,42 @@ textarea.form-control {
     font-weight: 600;
     color: var(--dark);
     min-width: 140px;
+    font-size: 1.5rem;
 }
 
 .info-value {
-    color: var(--gray);
+    font-size: 1.5rem;
 }
 
 .status-badge {
     padding: 6px 15px;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
-.status-processing {
-    background: #ffbf00;
-    color: var(--warning);
+.status-rescheduled {
+    background: #F8DE7E;
+    color: gray;
+}
+
+.status-confirmed {
+    background: rgba(18, 91, 94, 0.1);
+    color: green;
+}
+
+.status-cancelled {
+    background: rgba(192, 7, 22, 0.1);
+    color: red;
 }
 
 .status-completed {
-    background: rgba(76, 201, 240, 0.1);
-    color: var(--success);
+    background: rgba(7, 87, 192, 0.1);
+    color: blue;
 }
-
-.status-canceled {
-    background: rgba(230, 57, 70, 0.1);
-    color: var(--danger);
+.status-processing {
+    background: rgba(145, 144, 144, 0.1);
+    color: gray;
 }
 
 .card-footer {

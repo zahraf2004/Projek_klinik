@@ -126,8 +126,6 @@ class DokterResource extends Resource
     {
         return [
             'index' => Pages\ListDokters::route('/'),
-            'create' => Pages\CreateDokter::route('/create'),
-            'edit' => Pages\EditDokter::route('/{record}/edit'),
         ];
     }
 }

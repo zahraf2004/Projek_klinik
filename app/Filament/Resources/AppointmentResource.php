@@ -24,7 +24,8 @@ class AppointmentResource extends Resource
 {
     protected static ?string $model = Appointment::class;
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
-    protected static ?string $navigationLabel = 'Janji Temu';
+    protected static ?string $navigationLabel = 'Janji Berobat';
+    protected static ?string $label = 'Kelola Janji Berobat';
 
     public static function form(Form $form): Form
     {
@@ -62,19 +63,19 @@ class AppointmentResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nama')
-                    ->searchable()
                     ->label('Nama')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('no_hp')
                     ->label('Handphone'),
                 TextColumn::make('tanggal_lahir')
-                    ->searchable()
                     ->label('Tanggal Lahir')
                     ->sortable(),
                 TextColumn::make('alamat')
                     ->searchable()
-                    ->label('Alamat'),
+                    ->label('Alamat')
+                    ->limit(50)
+                    ->extraAttributes(['class' => 'max-w-[300px] line-clamp-2']),
                 TextColumn::make('keluhan')
                     ->label('Keluhan Pasien'),
                 TextColumn::make('tanggal')
@@ -84,10 +85,8 @@ class AppointmentResource extends Resource
                     ->label('Jam')
                     ->sortable(),
                 TextColumn::make('admin_notes')
-                    ->searchable()
                     ->label('Catatan')
                     ->sortable()
-                    ->label('Deskripsi')
                     ->html()
                     ->limit(50)
                     ->tooltip(function (TextColumn $column): ?string {
@@ -101,27 +100,28 @@ class AppointmentResource extends Resource
                     ->label('Status')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
-                        'pending' => 'info',
+                        'pending' => 'gray',
                         'confirmed' => 'success',
                         'cancelled' => 'danger',
-                        'completed' => 'pink',
+                        'completed' => 'info',
                         'rescheduled' => 'warning',
                         default => 'gray',
                     }),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
-                ->options([
-                    'pending' => 'info',
-                    'confirmed' => 'success',
-                    'cancelled' => 'danger',
-                    'completed' => 'pink',
-                    'rescheduled' => 'warning',
-                ])
+                    ->options([
+                        'pending' => 'Pending',
+                        'confirmed' => 'Confirmed',
+                        'completed' => 'Completed',
+                        'cancelled' => 'Cancelled',
+                        'rescheduled' => 'Rescheduled',
+                    ]),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
+            
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
@@ -136,12 +136,15 @@ class AppointmentResource extends Resource
         ];
     }
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListAppointments::route('/'),
-            'create' => Pages\CreateAppointment::route('/create'),
-            'edit' => Pages\EditAppointment::route('/{record}/edit'),
         ];
     }
 }

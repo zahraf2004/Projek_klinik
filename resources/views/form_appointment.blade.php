@@ -5,9 +5,9 @@
             <div class="container-fluid px-4">
                 
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Janji Temu > Buat Janji Temu</li>
+                    <li class="breadcrumb-item active">Janji Berobat > Buat Janji Berobat</li>
                 </ol>
-                <h2 class="titleJanji">Buat Janji Temu</h2>
+                <h2 class="titleJanji">Buat Janji Berobat</h2>
             </div>
 
             <!-- Data FORM -->
@@ -15,7 +15,7 @@
                 @csrf
                 <div class="form1">
                     <section id="step-1" class="form-step">
-                        <h4 class="card-title"><i class="fas fa-calendar-check"></i> Buat Janji Temu</h4>
+                        <h4 class="card-title"><i class="fas fa-calendar-check"></i> Buat Janji Berobat</h4>
                         
                         <div class="row">
                             <div class="col-md-6">
