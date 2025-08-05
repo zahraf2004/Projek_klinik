@@ -18,4 +18,10 @@ class ObatController extends Controller
         $obats = Obat::paginate(12); // Perbaiki variabel
         return view('obat', compact('obats')); // Perbaiki compact
     }
+
+    public function homepage()
+    {
+        $obats = Obat::take(3)->get();
+        return view('homepage', compact('obats'));
+    }
 }

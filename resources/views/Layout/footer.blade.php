@@ -15,7 +15,7 @@
                 <div class="footer-col">
                     <h3>Layanan Kami</h3>
                     <ul class="footer-links">
-                        <li><a href="/chatify"><i class="fas fa-stethoscope"></i> Konsultasi Dokter</a></li>
+                        <li><a href="/pilih-Dokter"><i class="fas fa-stethoscope"></i> Konsultasi Dokter</a></li>
                         <li><a href="riwayat"><i class="fa-regular fa-calendar"></i> Atur Jadwal Temu</a></li>
                         <li><a href="/layanan-kami"><i class="fas fa-pills"></i> Layanan Kesehatan</a></li>
                     </ul>

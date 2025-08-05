@@ -23,13 +23,14 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
             // Toggle mobile menu
             const hamburger = document.getElementById('hamburger');
             const navLinks = document.querySelector('.nav-links');
-            
+
             hamburger.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
-                
+
                 // Change hamburger icon
                 const icon = hamburger.querySelector('i');
                 if (navLinks.classList.contains('active')) {
@@ -40,7 +41,7 @@
                     icon.classList.add('fa-bars');
                 }
             });
-            
+
             // Close mobile menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
@@ -50,72 +51,115 @@
                     icon.classList.add('fa-bars');
                 }
             });
-            
-            // Search functionality
-            const searchInput = document.getElementById('choices-text-preset-values');
+            // Toggle dropdown menu profil
+            const profileBtn = document.getElementById('profileDropdownBtn');
+            const profileMenu = document.getElementById('profileDropdownMenu');
+
+            profileBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // biar gak langsung ketutup
+                profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Tutup dropdown kalau klik di luar
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.user-dropdown')) {
+                    profileMenu.style.display = 'none';
+                }
+            });
+
+            // Search button
+            const searchInput1 = document.getElementById('choices-text-preset-values');
             const searchBtn = document.querySelector('.search-btn');
-            
-            searchBtn.addEventListener('click', () => {
-                if (searchInput.value.trim() !== '') {
-                    alert(`Mencari: ${searchInput.value}`);
-                    // Implement your search logic here
-                }
-            });
-            
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    if (searchInput.value.trim() !== '') {
-                        alert(`Mencari: ${searchInput.value}`);
-                        // Implement your search logic here
+            if (searchBtn && searchInput1) {
+                searchBtn.addEventListener('click', () => {
+                    if (searchInput1.value.trim() !== '') {
+                        alert(`Mencari: ${searchInput1.value}`);
                     }
-                }
-            
-            document.querySelector('.btn-cancel').addEventListener('click', function() {
-                const confirmation = confirm('Apakah Anda yakin ingin membatalkan? Semua data yang telah diisi akan hilang.');
-                if (confirmation) {
-                    alert('Form telah dibatalkan');
-                    document.querySelector('form').reset();
-                }
-            });
-            const doctorCards = document.querySelectorAll('.doctor-card');
-        doctorCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-7px)';
-                card.style.boxShadow = '0 12px 25px rgba(0, 0, 0, 0.15)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-            });
-        });
-        
-        // Fungsi pencarian dokter
-        const searchInput = document.querySelector('.search-container input');
-        const searchButton = document.querySelector('.search-container button');
-        
-        searchButton.addEventListener('click', searchDoctors);
-        searchInput.addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                searchDoctors();
+                });
+
+                searchInput1.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && searchInput1.value.trim() !== '') {
+                        alert(`Mencari: ${searchInput1.value}`);
+                    }
+                });
             }
-        });
-        
-        function searchDoctors() {
-            const searchTerm = searchInput.value.toLowerCase();
+
+            // Cancel button
+            const cancelBtn = document.querySelector('.btn-cancel');
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', function () {
+                    const confirmation = confirm('Apakah Anda yakin ingin membatalkan? Semua data yang telah diisi akan hilang.');
+                    if (confirmation) {
+                        alert('Form telah dibatalkan');
+                        document.querySelector('form').reset();
+                    }
+                });
+            }
+
+            // Hover doctor cards
             const doctorCards = document.querySelectorAll('.doctor-card');
-            
             doctorCards.forEach(card => {
-                const doctorName = card.querySelector('.doctor-name').textContent.toLowerCase();
-                const specialty = card.querySelector('.doctor-specialty').textContent.toLowerCase();
-                
-                if (doctorName.includes(searchTerm) || specialty.includes(searchTerm)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-7px)';
+                    card.style.boxShadow = '0 12px 25px rgba(0, 0, 0, 0.15)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+                });
             });
-        }
+
+            // Search doctors
+            const searchInput2 = document.querySelector('.search-container input');
+            const searchButton = document.querySelector('.search-container button');
+
+            if (searchInput2 && searchButton) {
+                searchButton.addEventListener('click', searchDoctors);
+                searchInput2.addEventListener('keyup', function (event) {
+                    if (event.key === 'Enter') {
+                        searchDoctors();
+                    }
+                });
+
+                function searchDoctors() {
+                    const searchTerm = searchInput2.value.toLowerCase();
+                    doctorCards.forEach(card => {
+                        const doctorName = card.querySelector('.doctor-name').textContent.toLowerCase();
+                        const specialty = card.querySelector('.doctor-specialty').textContent.toLowerCase();
+
+                        if (doctorName.includes(searchTerm) || specialty.includes(searchTerm)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            }
+
+            // Scroll animation
+            const elements = document.querySelectorAll('.about-image, .vision, .mission');
+            elements.forEach(el => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            });
+
+            const animateOnScroll = function () {
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0)";
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

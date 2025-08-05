@@ -9,10 +9,11 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\AppointmentController;
 
 // Route tampil login
-Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
 // Route untuk login
-Route::post('/', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //route register
 Route::get('/register', function (){
@@ -23,14 +24,6 @@ Route::post('/register', [RegisterPasienController::class, 'register'])->name('r
 //route chatify
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/chatify', [\Chatify\Http\Controllers\MessagesController::class, 'index'])->name('chatify');
-});
-
-
-Route::get('/homepage', function (){
-    return view('homepage');
-});
-Route::get('/obat2', function (){
-    return view('obat2');
 });
 
 Route::get('/tele', function (){
@@ -50,6 +43,7 @@ Route::post('/isi-janji-temu', [AppointmentController::class, 'store'])->name('a
 Route::get('/pilih-Dokter', [DokterController::class, 'index'])->name('dokter.index');
 
 //route keseluruhan
+Route::get('/', [ObatController::class, 'homepage'])->name('homepage');
 Route::get('/dashboard', [ObatController::class, 'dashboard'])->name('dashboard');
 Route::get('/obat', [ObatController::class, 'index'])->name('obat.index');
 Route::get('/tentang-kami', function (){

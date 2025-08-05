@@ -79,7 +79,7 @@ class AppointmentResource extends Resource
                 TextColumn::make('keluhan')
                     ->label('Keluhan Pasien'),
                 TextColumn::make('tanggal')
-                    ->label('Tanggal Janji Temu')
+                    ->label('Tanggal Janji')
                     ->sortable(),
                 TextColumn::make('jam')
                     ->label('Jam')
@@ -120,6 +120,7 @@ class AppointmentResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             
             ->bulkActions([
@@ -145,6 +146,8 @@ class AppointmentResource extends Resource
     {
         return [
             'index' => Pages\ListAppointments::route('/'),
+            'create' => Pages\CreateAppointment::route('/create'),
+            'edit' => Pages\EditAppointment::route('/{record}/edit'),
         ];
     }
 }

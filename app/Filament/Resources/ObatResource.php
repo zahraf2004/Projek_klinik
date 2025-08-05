@@ -129,6 +129,8 @@ class ObatResource extends Resource
     {
         return [
             'index' => Pages\ListObats::route('/'),
+            'create' => Pages\CreateObat::route('/create'),
+            'edit' => Pages\EditObat::route('/{record}/edit'),
         ];
     }
 }

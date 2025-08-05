@@ -13,7 +13,7 @@ use App\Models\Appointment;
 class AppointmentTable extends BaseWidget
 {
     protected static ?string $heading = 'Informasi Janji Berobat';
-    protected static ?int $sort = 3;
+    protected static ?int $sort = 2;
     protected int | string | array $columnSpan = 'full';
 
     protected function getTableQuery(): Builder
